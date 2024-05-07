@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+  xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+	http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+	http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+    <http:listener-config name="config-ref" >
+        <http:listener-connection host="0.0.0.0" port="8081" />
+    </http:listener-config>
+    <global-property name="mule.env" value="${mule.env}" />
+    <flow name="name1" >
+        <http:listener path="path" config-ref="config-ref" doc:name="Listener" doc:id="ggvfro" />
+        <set-payload value="Success" doc:name="Set payload" doc:id="jmrklr" />
+    </flow>
+  
+</mule>
